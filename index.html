@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aladin Fixer - Telegram Channel</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=this.async=!0;n.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      
+      // Yahan apni Meta Pixel ID dalein (e.g., fbq('init', 'YOUR_PIXEL_ID'));
+      fbq('init', 'REPLACE_WITH_YOUR_PIXEL_ID'); 
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=REPLACE_WITH_YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Glowing Logo Style */
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffcc00;
+            position: relative;
+            z-index: 2;
+            background-color: #1e1e1e;
+        }
+
+        .logo-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ff66, #ffcc00, #ff3366, #00ffff);
+            z-index: 1;
+            filter: blur(10px);
+            animation: glow 4s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Title & Members */
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffcc00;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .members {
+            font-size: 15px;
+            color: #d1d5db;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Badge Pills */
+        .badges-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            border: 1.5px solid #ff5722;
+            color: #ff7043;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(255, 87, 34, 0.05);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        .stat-card {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 18px 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffcc00;
+            margin-bottom: 5px;
+        }
+
+        .stat-value.white {
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        /* Telegram CTA Button */
+        .cta-button {
+            width: 100%;
+            background: linear-gradient(135deg, #22c55e 0%, #ef4444 100%);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+        }
+
+        /* Footer Icons */
+        .footer-features {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 11px;
+            color: #9ca3af;
+            gap: 5px;
+        }
+
+        .feature-icon {
+            font-size: 16px;
+        }
+
+        /* Copyright */
+        .copyright {
+            font-size: 11px;
+            color: #6b7280;
+        }
+
+        /* Responsive adjustments */
+        @keyframes pulse-btn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .cta-button {
+            animation: pulse-btn 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-wrapper">
+            <!-- Yahan apni logo image ka path ya URL daal sakte hain -->
+           <img src="aladin.jpg" alt="Aladin Fixer Logo" class="logo-img" id="channelLogo">
+        </div>
+
+        <!-- Heading -->
+        <div class="title">
+            <span>🪔</span> Aladin Fixer
+        </div>
+        <div class="members">
+            👥 120K+ Active Members
+        </div>
+
+        <!-- Badges -->
+        <div class="badges-row">
+            <div class="badge">🏆 Elite Analyst</div>
+            <div class="badge">⚡ Live Updates</div>
+        </div>
+
+        <!-- Stats Boxes -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">25,892</div>
+                <div class="stat-label">Match Tips</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">99%</div>
+                <div class="stat-label">Win Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value white">4.9★</div>
+                <div class="stat-label">Rating</div>
+            </div>
+        </div>
+
+        <!-- Join Button with Meta Pixel Click Tracking -->
+        <a href="https://t.me/+flJQSDXdPcY4ZTFl" target="_blank" class="cta-button" id="joinBtn">
+            Join Telegram Channel
+        </a>
+
+        <!-- Footer Badges -->
+        <div class="footer-features">
+            <div class="feature-item">
+                <span class="feature-icon">✅</span>
+                <span>Verified</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔒</span>
+                <span>Secure</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📈</span>
+                <span>Profitable</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⭐</span>
+                <span>Top Rated</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2026 Aladin Fixer. All rights reserved.
+    </div>
+
+    <!-- Script to track conversions/clicks for Meta Pixel -->
+    <script>
+        document.getElementById('joinBtn').addEventListener('click', function() {
+            // Yeh Custom Event Meta Pixel par trigger hoga jab koi button par click karega
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead'); // Ya aap 'Contact' / Custom event bhi use kar sakte hain
+            }
+        });
+    </script>
+</body>
+</html>
